@@ -1,0 +1,53 @@
+##Game Ideas ##
+
+The Tutorial of the game, not the whole game itself
+What happens in the tutorial, gives way to entire storyline
+
+Puzzles
+Dialogue
+
+You are young kid (6-7 yo) playing in a large house w/grandparents, you are
+playing around inside the house, imagining you are a pilot in a great war, Parents are pilots, 
+g-parents are watching news about conflict in other parts of the world. You and g-parents finish 
+watching power rangers and you want to make a Mecha suit out of cardboard. You get "Keys” 
+ie. cardboard, scissors, markers, paper etc. Maybe your p.parent ask you to grab something before they finish helping you.
+
+Maybe this is all a flashbacks will older (mid-older 20’s) Kid is building something
+
+## Puzzles ##
+
+- Main Puzzles
+- find the 7 keys to unlocks ???
+Each they has its own puzzle
+
+Feet - Kleenix boxes
+Legs - cousins skinguards - bedroom
+Torso - large box
+Arms - oven mitts - Kitchen
+Head - motorcycle helmet - garage & study
+Weapon - wrapping paper tube - basement
+
+grandparents
+mom/dad
+mom/dad sibling
+their kid (your cousin)
+
+Red
+Orange
+Yellow
+Green
+Blue
+Violet (purple)
+Pink
+Brown
+Black
+Gray
+White
+Light Blue
+
+##Requirements##
+system to interact/talking to NPC
+Battle system
+Mini-game /puzzle
+Abilities - Resource Management
+storyboard

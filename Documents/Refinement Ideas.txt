@@ -1,0 +1,25 @@
+To keep the game small make the parts more general. 
+	Upper half (Torso, Arms, Head)
+	Lower half (Legs, Feet)
+	Weapon. 
+
+This will allow us to have three levels but we can keep them simple 
+and small. I think it would be smart to railroad progression to 
+keep the experience fast as well. 
+
+Get the Lower half first with whatever challenge and with that
+you can complete an easy platformer challenge to get to the upper 
+half puzzle/level/fight whatever we decide. 
+
+The lastly combine whatever benefits you get from both to retrieve 
+the weapon which should be the most difficult 
+to get since it's a weapon maybe and then finally the last fight in 
+the basement which if we have time we can implement.
+
+I think we should have one or two us on level design and then the 
+other two on gui and functionality stuff. The levels should be simple
+so we should be able to finish those before all the technical stuff is 
+done and we can speed up progress on that. As for the individual 
+levels themselves we can implement the 'keys' and make it so you 
+need some things inside the levels to get to the other 'keys' 
+though they are less impactful/important.
