@@ -5,13 +5,13 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 
-    private string name;
+    private string characterName;
     private int health;
     private int armor;
 
     public Character(string charName, int initHealth, int initArmor)
     {
-        name = charName;
+        characterName = charName;
         health = initHealth;
         armor = initArmor;
     }
@@ -20,7 +20,7 @@ public class Character : MonoBehaviour
 
     public string getName()
     {
-        return name;
+        return characterName;
     }
 
     public int getHealth()
