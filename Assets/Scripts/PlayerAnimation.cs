@@ -16,7 +16,18 @@ public class PlayerAnimation : MonoBehaviour
 
     public void setDirection(Vector2 direction)
     {
-        lastDirection = DirectionToIndex(direction, 4);
+        string[] directionArray = null;
+
+        if(direction.magnitude < .01f)
+        {
+            directionArray = staticDirect;
+        }
+        else
+        {
+            directionArray = staticDirect;
+            lastDirection = DirectionToIndex(direction, 4);
+        }
+
         animate.Play(staticDirect[lastDirection]);
     }
 
