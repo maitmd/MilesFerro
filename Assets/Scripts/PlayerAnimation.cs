@@ -5,44 +5,33 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
 
-    public string[] staticDirect = { "Static N", "Static W", "Static S", "Static E" };
-    private Animator animate;
-    int lastDirection;
+    [SerializeField] private Sprite[] idleAnimate;
+    [SerializeField] private Sprite[] moveAnimate;
+    SpriteRenderer spriteRenderer;
+    int frame;
 
-    void Awake()
+    private void Awake()
     {
-        animate = GetComponent<Animator>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+	}
+
+	public void walkAnimation(Vector2 direction){
+        frame = VectorToArray(direction, moveAnimate.Length);
+        spriteRenderer.sprite = moveAnimate[frame];
     }
 
-    public void setDirection(Vector2 direction)
-    {
-        string[] directionArray = null;
-
-        if(direction.magnitude < .01f)
-        {
-            directionArray = staticDirect;
-        }
-        else
-        {
-            directionArray = staticDirect;
-            lastDirection = DirectionToIndex(direction, 4);
-        }
-
-        animate.Play(staticDirect[lastDirection]);
+    public void idleAnimation(Vector2 direction) {
+        frame = VectorToArray(direction, idleAnimate.Length);
+        spriteRenderer.sprite = idleAnimate[frame];
     }
 
-    private int DirectionToIndex(Vector2 direction, int slice)
-    {
-        Vector2 normDirection = direction.normalized;
-
-        float step = 360 / slice;
-        float halfstep = step / 2;
-
-        float angle = Vector2.SignedAngle(Vector2.up, normDirection);
-        angle += halfstep;
-
-        if(angle < 0)
-        {
+    public int VectorToArray(Vector2 direction, int slices){ 
+        float step = 360 / slices;
+        float halfStep = step / 2;
+        float angle = Vector2.SignedAngle(Vector2.up, direction);
+        angle += halfStep;
+        
+        if(angle < 0) {
             angle += 360;
         }
 
