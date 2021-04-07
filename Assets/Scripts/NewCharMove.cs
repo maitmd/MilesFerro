@@ -34,14 +34,18 @@ public class NewCharMove : MonoBehaviour {
     }
 
 	private void FixedUpdate() {
+        RaycastHit2D[] hit = new RaycastHit2D[0];
         bool isIdle = moveX == 0 && moveY == 0;
         if(isIdle) {
             playerAnimation.idleAnimation(lastDirection);
         } else {
             Vector3 moveDirection = new Vector3(moveX, moveY).normalized;
             Vector3 nextPosition = transform.position + moveDirection * playerSpeed * Time.deltaTime;
-            RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, moveDirection, playerSpeed * Time.deltaTime);
-
+            LayerMask mask = LayerMask.GetMask("Characters");
+            mask = ~mask;
+            RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, moveDirection, playerSpeed * Time.deltaTime, mask);
+            //Debug.DrawRay(transform.position, moveDirection, Color.red);
+            //Debug.Log(raycastHit.collider);
             if(raycastHit.collider == null) {
                 //nothing hit, can Move
                 lastDirection = moveDirection;
@@ -50,7 +54,6 @@ public class NewCharMove : MonoBehaviour {
             } else {
                 playerAnimation.idleAnimation(lastDirection);
             }
-        }
+		}
     }
-
 }
