@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 211e22c62e2177c40989255e41be2fd4
   - enabled: 1
-    path: Assets/Models/Living Room Model.unity
-    guid: dc7765f3274266d4b83acd21995f7d32
-  - enabled: 1
     path: Assets/Scenes/SettingScene.unity
     guid: 3eeb880e4f4d15d40936e91aec92fdb5
+  - enabled: 1
+    path: Assets/Scenes/InventoryScene.unity
+    guid: 3ed76f0050927e64a973b03614fb772b
+  - enabled: 1
+    path: Assets/Scenes/Kitchen.unity
+    guid: 4399bfbed97697d48bdc808bc6c41d3b
+  - enabled: 1
+    path: Assets/Scenes/LivingRoom.unity
+    guid: 5888ce2e01f5fe9439e99a34ac7070b2
   m_configObjects: {}
