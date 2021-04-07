@@ -16,13 +16,11 @@ public class PlayerAnimation : MonoBehaviour
 	}
 
 	public void walkAnimation(Vector2 direction){
-        frame = VectorToArray(direction, moveAnimate.Length);
-        spriteRenderer.sprite = moveAnimate[frame];
+        spriteRenderer.sprite = moveAnimate[VectorToArray(direction, moveAnimate.Length)];
     }
 
     public void idleAnimation(Vector2 direction) {
-        frame = VectorToArray(direction, idleAnimate.Length);
-        spriteRenderer.sprite = idleAnimate[frame];
+        spriteRenderer.sprite = idleAnimate[VectorToArray(direction, idleAnimate.Length)];
     }
 
     public int VectorToArray(Vector2 direction, int slices){ 

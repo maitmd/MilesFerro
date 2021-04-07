@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
-
+    public GameController gameController;
     public string gameScene;
     public string settingScene;
 
     // Start is called before the first frame update
     void Start() {
-        
+        //gameController = gameObject.
     }
 
     // Update is called once per frame
@@ -21,6 +21,7 @@ public class GameMenu : MonoBehaviour
 
     public void playButton()
     {
+        //GameController.instance.loadGame();
         SceneManager.LoadScene(gameScene);
     }
 
