@@ -22,7 +22,7 @@ public class PlayerController : LivingEntity
         Vector2 movement = Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * getSpeed();
         Vector2 newPosition = GetComponent<Rigidbody2D>().position + movement * Time.fixedDeltaTime;
 
-        playAni.setDirection(movement);
+        //playAni.setDirection(movement);
         GetComponent<Rigidbody2D>().MovePosition(newPosition);
     }
 }
