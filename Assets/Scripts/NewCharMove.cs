@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class NewCharMove : MonoBehaviour {
 
-    private float playerSpeed = 2f;
+    private float playerSpeed;
     private Vector3 lastDirection = new Vector3(0,0);
     private PlayerAnimation playerAnimation;
     float moveX, moveY;
+
 
     private void Awake(){
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
         playerAnimation = gameObject.GetComponent<PlayerAnimation>();
+        Debug.Log("it work");
     }
+
     void Update() {
         float moveConst = 1f;
         moveX = 0f;
@@ -55,5 +58,10 @@ public class NewCharMove : MonoBehaviour {
                 playerAnimation.idleAnimation(lastDirection);
             }
 		}
+    }
+
+    public static void setSpeed(float s)
+    {
+        playerSpeed = s;
     }
 }
