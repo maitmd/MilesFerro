@@ -16,7 +16,7 @@ public class BattleHandler : MonoBehaviour
     {
         while (player.Battling())
         {
-
+            //do stuff
         }
 
         enemy.endBattle();
