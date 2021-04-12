@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewCharMove : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     private float playerSpeed = 2f;
     private Vector3 lastDirection = new Vector3(0,0);
