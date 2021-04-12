@@ -14,22 +14,14 @@ public class Player : LivingEntity
 
     public void Start()
     {
-        NewCharMove.setSpeed(getSpeed());
     }
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    public static string getCurrentScene()
-    {
-        return currentScene;
     }
 
     public void switchScene(string name)
     {
-        currentScene = name;
         SceneManager.LoadScene(name);
     }
 }

@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class LeggingsGuardian : Enemy
 {
-    private BattleHandler battle;
-    private string sceneName = "LeggingsGuardian";
-    private string returnScene;
+    
     // Start is called before the first frame update
     void Start()
     {
-        battle.setScene(sceneName);
-        battle = GetComponent<BattleHandler>();
+        setReturnScene("Kitchen");
+        setBattleScene("LeggingsGuardian");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void startBattle()
-    {
-        returnScene = Player.getCurrentScene();
-        battle.enabled = true;
+        if (this.Battling())
+        {
+            BattleHandler battle = GetComponent<BattleHandler>();
+            startBattle();
+        }
     }
 }

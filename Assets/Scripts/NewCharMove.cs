@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewCharMove : MonoBehaviour {
 
-    private float playerSpeed;
+    private float playerSpeed = 2f;
     private Vector3 lastDirection = new Vector3(0,0);
     private PlayerAnimation playerAnimation;
     float moveX, moveY;
@@ -14,15 +14,13 @@ public class NewCharMove : MonoBehaviour {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
         playerAnimation = gameObject.GetComponent<PlayerAnimation>();
-        Debug.Log("it work");
     }
 
     void Update() {
         float moveConst = 1f;
         moveX = 0f;
         moveY = 0f;
-
-        if(Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.W)) {
             moveY = +moveConst;
         }
         if(Input.GetKey(KeyCode.S)) {
@@ -38,7 +36,7 @@ public class NewCharMove : MonoBehaviour {
 
 	private void FixedUpdate() {
         RaycastHit2D[] hit = new RaycastHit2D[0];
-        bool isIdle = moveX == 0 && moveY == 0;
+        bool isIdle = (moveX == 0 && moveY == 0);
         if(isIdle) {
             playerAnimation.idleAnimation(lastDirection);
         } else {
@@ -60,7 +58,7 @@ public class NewCharMove : MonoBehaviour {
 		}
     }
 
-    public static void setSpeed(float s)
+    public void setSpeed(float s)
     {
         playerSpeed = s;
     }

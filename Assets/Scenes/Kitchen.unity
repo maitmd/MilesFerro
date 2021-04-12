@@ -10192,18 +10192,61 @@ PrefabInstance:
     - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
         type: 3}
       propertyPath: idleAnimate.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
         type: 3}
       propertyPath: moveAnimate.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 5083934743092349223, guid: 7c6bf7a66933c1f4ca9308531b76d655,
+    - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
         type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: idleAnimate.Array.data[0]
+      value: 
+      objectReference: {fileID: 3427114271967980436, guid: 8acb6ba199e588e4e9f9c289bfbe14a7,
+        type: 3}
+    - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
+        type: 3}
+      propertyPath: idleAnimate.Array.data[1]
+      value: 
+      objectReference: {fileID: 8158605244509288230, guid: 8acb6ba199e588e4e9f9c289bfbe14a7,
+        type: 3}
+    - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
+        type: 3}
+      propertyPath: idleAnimate.Array.data[2]
+      value: 
+      objectReference: {fileID: 6184959299203262911, guid: 8acb6ba199e588e4e9f9c289bfbe14a7,
+        type: 3}
+    - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
+        type: 3}
+      propertyPath: idleAnimate.Array.data[3]
+      value: 
+      objectReference: {fileID: 2495864320845663737, guid: 8acb6ba199e588e4e9f9c289bfbe14a7,
+        type: 3}
+    - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
+        type: 3}
+      propertyPath: moveAnimate.Array.data[0]
+      value: 
+      objectReference: {fileID: 3427114271967980436, guid: 8acb6ba199e588e4e9f9c289bfbe14a7,
+        type: 3}
+    - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
+        type: 3}
+      propertyPath: moveAnimate.Array.data[1]
+      value: 
+      objectReference: {fileID: 8158605244509288230, guid: 8acb6ba199e588e4e9f9c289bfbe14a7,
+        type: 3}
+    - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
+        type: 3}
+      propertyPath: moveAnimate.Array.data[2]
+      value: 
+      objectReference: {fileID: 6184959299203262911, guid: 8acb6ba199e588e4e9f9c289bfbe14a7,
+        type: 3}
+    - target: {fileID: 5083934743092349221, guid: 7c6bf7a66933c1f4ca9308531b76d655,
+        type: 3}
+      propertyPath: moveAnimate.Array.data[3]
+      value: 
+      objectReference: {fileID: 2495864320845663737, guid: 8acb6ba199e588e4e9f9c289bfbe14a7,
+        type: 3}
     - target: {fileID: 5083934743092349226, guid: 7c6bf7a66933c1f4ca9308531b76d655,
         type: 3}
       propertyPath: m_Name

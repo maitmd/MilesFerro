@@ -7,6 +7,7 @@ public class LivingEntity : Entity
 
     [SerializeField] private int health;
     [SerializeField] private float speed;
+    private bool battling = false;
     private ArrayList inventory;
 
     // Start is called before the first frame update
@@ -31,8 +32,18 @@ public class LivingEntity : Entity
         return speed;
     }
 
+    public bool Battling()
+    {
+        return battling;
+    }
+
     public void setHealth(int newHealth)
     {
         health = newHealth;
+    }
+
+    public void BattleStartEnd()
+    {
+        battling = !battling;
     }
 }
