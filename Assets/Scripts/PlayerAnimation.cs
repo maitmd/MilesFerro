@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
@@ -8,7 +6,6 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private Sprite[] idleAnimate;
     [SerializeField] private Sprite[] moveAnimate;
     SpriteRenderer spriteRenderer;
-    int frame;
 
     private void Awake()
     {

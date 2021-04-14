@@ -6,29 +6,29 @@ using UnityEngine.UI;
 
 public class SettingMenu : MonoBehaviour
 {
-
-    public string mainMenu;
-    private bool isFullscreen = false;
+    public Text buttonText;
+    public GameObject button;
     
 
-    public void gameMenu()
-    {
-        SceneManager.LoadScene(mainMenu);
-    }
+    public void gameMenu() => SceneManager.LoadScene((int) Scenes.START_MENU);
+ 
 
     public void setFullscreen(){
-        if(!isFullscreen){
-            
-		}
-	}
-
-    public void textChanger(){
-        string fullscreenButton = GameObject.FindWithTag("FullscreenButton").GetComponentInChildren<Text>().text;
-        if(fullscreenButton == "Fullscreen"){
-            fullscreenButton = "Windowed";
-		}else{
-            fullscreenButton = "Windowed";
+        print("HERE!");
+        if(buttonText.text == "Fullscreen") {
+            buttonText.text = "Widescreen";
+            //set screen as widescreen
+            fullscreenMode();
+            print("Screen is in Windowed Mode");
+        } else if(buttonText.text == "Widescreen"){
+            buttonText.text = "Fullscreen";
+            //set screen as fullscreen
+            fullscreenMode();
+            print("Screen is in Fullscreen Mode");
         }
+    }
 
+    private void fullscreenMode(){
+        Screen.fullScreen = !Screen.fullScreen;
 	}
 }
