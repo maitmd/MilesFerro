@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : LivingEntity
-
-{
+public class PlayerController : LivingEntity{
 
     public float playerSpeed = 1f;
 
@@ -19,7 +17,7 @@ public class PlayerController : LivingEntity
     // Update is called once per frame
     void Update()
     {
-        Vector2 movement = Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * getSpeed();
+        Vector2 movement = Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1) * playerSpeed * Time.deltaTime;
         Vector2 newPosition = GetComponent<Rigidbody2D>().position + movement * Time.fixedDeltaTime;
 
         //playAni.setDirection(movement);

@@ -9,7 +9,6 @@ public class Transitions : Interactable
 	public string prevScene = "";
 	public string currentScene = "";
 
-	public Animator animator;
 
 	/*private void OnTriggerEnter2D(Collider2D other) {
         //Debug.Log("Miles Ferro just collided with " + other.name);
@@ -17,12 +16,8 @@ public class Transitions : Interactable
         //SceneManager.LoadScene(newScene);
 	}*/
 
-	public void inRadius(){
-		animator.SetBool("IsOpen", true);
-	}
-
-	private void OnTriggerStay2D(Collider2D collision) {
-		if(Input.GetKey(KeyCode.E)){
+	/*private void OnTriggerStay2D(Collider2D collision) {
+		if(Input.GetKey(KeyCode.E)) {
 			prevScene = currentScene;
 			SceneManager.LoadSceneAsync(newScene);
 			//SceneManager.LoadScene(newScene);
@@ -30,13 +25,13 @@ public class Transitions : Interactable
 			SceneManager.SetActiveScene(SceneManager.GetSceneByName("Kitchen"));
 			Debug.Log(SceneManager.GetActiveScene().name);
 		}
-	}
+	}*/
 
-	private void loadScene(){
-	}
+	/*private void loadScene(){
+	}*/
 
 	public override void Interact() {
-		
+		print("Moving to Kitchen");
 	}
 
 }

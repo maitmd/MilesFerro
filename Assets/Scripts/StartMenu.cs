@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour {
 
-	public void playButton() => SceneManager.LoadScene((int)Scenes.LIVING_ROOM);
+	public void PlayButton() => SceneManager.LoadScene((int)Scenes.LIVING_ROOM);
 	
-	public void continueButton() {
+	public void ContinueButton() {
 		print("Continue");
 	}
 
-	public void settingsButton() => SceneManager.LoadScene((int)Scenes.SETTINGS);
+	public void SettingsButton() => SceneManager.LoadScene((int)Scenes.SETTINGS);
 
-	public void quitButton() =>
-		print("Quit");
-		//Application.Quit();
+	public void QuitButton() =>
+		//print("Quit");
+		Application.Quit();
 }

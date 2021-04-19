@@ -21,17 +21,17 @@ public class LivingEntity : Entity
         
     }
 
-    public int getHealth()
+    public int GetHealth()
     {
         return health;
     }
 
-    public float getSpeed()
+    public float GetSpeed()
     {
         return speed;
     }
 
-    public void setHealth(int newHealth)
+    public void SetHealth(int newHealth)
     {
         health = newHealth;
     }
