@@ -12,11 +12,11 @@ public class PlayerAnimation : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 	}
 
-	public void walkAnimation(Vector2 direction){
+	public void WalkAnimation(Vector2 direction){
         spriteRenderer.sprite = moveAnimate[VectorToArray(direction, moveAnimate.Length)];
     }
 
-    public void idleAnimation(Vector2 direction) {
+    public void IdleAnimation(Vector2 direction) {
         spriteRenderer.sprite = idleAnimate[VectorToArray(direction, idleAnimate.Length)];
     }
 

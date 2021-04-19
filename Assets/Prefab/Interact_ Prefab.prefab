@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4482055287871301826}
   - component: {fileID: 3838240496382458032}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Interact_ Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1628649375
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &4482055287871301826
@@ -134,8 +134,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -120}
-  m_SizeDelta: {x: 125, y: 20}
+  m_AnchoredPosition: {x: 0, y: -341}
+  m_SizeDelta: {x: 485, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4824498524635526365
 CanvasRenderer:
@@ -192,8 +192,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 56
+  m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

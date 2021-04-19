@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -430, y: 135}
-  m_SizeDelta: {x: 210, y: 60}
+  m_AnchoredPosition: {x: -430, y: 225}
+  m_SizeDelta: {x: 315, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336263629
 MonoBehaviour:
@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1762590655}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: playButton
+        m_MethodName: PlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -305,8 +305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -430, y: -45}
-  m_SizeDelta: {x: 210, y: 60}
+  m_AnchoredPosition: {x: -430, y: -75}
+  m_SizeDelta: {x: 315, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362427724
 MonoBehaviour:
@@ -354,7 +354,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1762590655}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: settingsButton
+        m_MethodName: SettingsButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -558,10 +558,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -22}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.00925926, y: 0.00925926, z: 0.00925926}
   m_Children: []
-  m_Father: {fileID: 1762590654}
+  m_Father: {fileID: 737939159}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565735042
@@ -594,12 +594,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1762590654}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 282, y: 0}
+  m_SizeDelta: {x: 363.4, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565735044
 MonoBehaviour:
@@ -623,18 +623,20 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 80
+    m_MinSize: 1
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: Miles Ferro
+    m_LineSpacing: 1.5
+  m_Text: 'Miles
+
+    Ferro'
 --- !u!222 &565735045
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -702,11 +704,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 42
     m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -758,8 +760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -430, y: -135}
-  m_SizeDelta: {x: 210, y: 60}
+  m_AnchoredPosition: {x: -430, y: -225}
+  m_SizeDelta: {x: 315, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &661479549
 MonoBehaviour:
@@ -807,7 +809,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1762590655}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: quitButton
+        m_MethodName: QuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -882,6 +884,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 519420032}
   - {fileID: 1762590654}
   - {fileID: 740592647}
   m_Father: {fileID: 0}
@@ -917,7 +920,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 737939159}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &740592648
 MonoBehaviour:
@@ -989,8 +992,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -430, y: 45}
-  m_SizeDelta: {x: 210, y: 60}
+  m_AnchoredPosition: {x: -430, y: 75}
+  m_SizeDelta: {x: 315, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096152658
 MonoBehaviour:
@@ -1038,7 +1041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1762590655}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: continueButton
+        m_MethodName: ContinueButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1118,12 +1121,12 @@ RectTransform:
   - {fileID: 362427723}
   - {fileID: 661479548}
   m_Father: {fileID: 1762590654}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1414668736
 GameObject:
@@ -1233,12 +1236,12 @@ RectTransform:
   m_Children:
   - {fileID: 604833335}
   m_Father: {fileID: 1762590654}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 640, y: 360}
-  m_SizeDelta: {x: 1280, y: 720}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1708847376
 GameObject:
@@ -1371,9 +1374,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1411,12 +1414,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 519420032}
   - {fileID: 565735043}
   - {fileID: 1392360081}
   - {fileID: 1590890358}
   m_Father: {fileID: 737939159}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

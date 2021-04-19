@@ -5,7 +5,7 @@ using UnityEngine;
  * Enemy Data Class
  */
 [CreateAssetMenu(fileName = "New Enemy", menuName = "Assets/Enemy")]
-public class Enemy : ScriptableObject
+public class NewEnemy : ScriptableObject
 {
     public string EnemyID;
     public string EnemyName;

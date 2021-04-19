@@ -6,7 +6,7 @@ using UnityEngine;
  * This will spawn a new Item object - It is recommended that you add the new Item to the database when complete.
  */
 [CreateAssetMenu(fileName = "New Item", menuName = "Assets/Item")]
-public class Item : ScriptableObject
+public class NewItem : ScriptableObject
 {
     public string ItemID;           //For database use
     public string ItemName;         //String name of item
