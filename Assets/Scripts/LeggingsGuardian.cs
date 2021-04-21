@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleHandler : MonoBehaviour
+public class LeggingsGuardian : Enemy
 {
-    [SerializeField] private Enemy enemy;
-    [SerializeField] private Player player;
+    
     // Start is called before the first frame update
     void Start()
     {
+        setReturnScene("Kitchen");
+        setBattleScene("LeggingsGuardian");
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (player.Battling())
+        if (this.Battling())
         {
-            //do stuff
+            BattleHandler battle = GetComponent<BattleHandler>();
+            startBattle();
         }
-
-        enemy.endBattle();
     }
-
 }
