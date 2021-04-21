@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Enemy : NPC
+public class Enemy : LivingEntity, IBattler
 {
     private string battleScene;
     private string returnScene;
+    private float numBattlers;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +20,6 @@ public class Enemy : NPC
 
     }
 
-    public void startBattle()
-    {
-        SceneManager.LoadScene(getBattleScene());
-    }
-
-    public void endBattle()
-    {
-        SceneManager.LoadScene(getReturnScene());
-    }
-
     public string getBattleScene()
     {
         return battleScene;
@@ -37,6 +28,11 @@ public class Enemy : NPC
     public string getReturnScene()
     {
         return returnScene;
+    }
+
+    public float getNumBattlers()
+    {
+        return numBattlers;
     }
 
     public void setBattleScene(string b)
@@ -48,4 +44,11 @@ public class Enemy : NPC
     {
         returnScene = r;
     }
+
+    public void setNumBattlers(float n)
+    {
+        numBattlers = n;
+    }
+
+
 }

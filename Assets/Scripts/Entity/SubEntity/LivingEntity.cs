@@ -5,9 +5,9 @@ using UnityEngine;
 public class LivingEntity : Entity
 {
 
-    [SerializeField] private int health;
+    [SerializeField] private int maxHealth;
     [SerializeField] private float speed;
-    private bool battling = false;
+    private int currentHealth;
     private ArrayList inventory;
 
     // Start is called before the first frame update
@@ -22,28 +22,18 @@ public class LivingEntity : Entity
         
     }
 
+    public void setHealth(int newHealth)
+    {
+        currentHealth = newHealth;
+    }
+
     public int GetHealth()
     {
-        return health;
+        return currentHealth;
     }
 
     public float GetSpeed()
     {
         return speed;
-    }
-
-    public bool Battling()
-    {
-        return battling;
-    }
-
-    public void setHealth(int newHealth)
-    {
-        health = newHealth;
-    }
-
-    public void BattleStartEnd()
-    {
-        battling = !battling;
     }
 }

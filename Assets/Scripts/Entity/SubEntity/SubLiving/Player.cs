@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : LivingEntity{
+public class Player : LivingEntity, IBattler{
 
     public float playerSpeed = 1f;
 

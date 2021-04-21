@@ -10,6 +10,7 @@ public class LeggingsGuardian : Enemy
     {
         setReturnScene("Kitchen");
         setBattleScene("LeggingsGuardian");
+        setNumBattlers(1f);
     }
 
     // Update is called once per frame
@@ -17,8 +18,7 @@ public class LeggingsGuardian : Enemy
     {
         if (this.Battling())
         {
-            BattleHandler battle = GetComponent<BattleHandler>();
-            startBattle();
+            //start battle
         }
     }
 }

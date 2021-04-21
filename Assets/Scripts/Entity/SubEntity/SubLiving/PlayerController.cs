@@ -1,10 +1,6 @@
 using UnityEngine;
 
-<<<<<<< HEAD:Assets/Scripts/CharacterController.cs
-public class CharacterController : MonoBehaviour {
-=======
 public class PlayerController : MonoBehaviour {
->>>>>>> battle:Assets/Scripts/PlayerController.cs
 
 
     private PauseMenu pauseMenu;
