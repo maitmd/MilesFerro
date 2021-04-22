@@ -4,22 +4,54 @@ using UnityEngine;
 
 public class BattleHandler : MonoBehaviour
 {
-    [SerializeField] private Enemy enemy;
-    [SerializeField] private Player player;
+    [SerializeField] private LivingEntity[] battlers;
+    private int actingBattler;
+    private float numBattlers;
     // Start is called before the first frame update
     void Start()
     {
+        for(int i = 0; i < battlers.Length; i++)
+        {
+            if(battlers[i] is Enemy)
+            {
+                numBattlers = ((Enemy)battlers[i]).getNumBattlers();
+                break;
+            }
+        }
+        actingBattler = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (player.Battling())
+        if (battlers[actingBattler].isBattling())
         {
-            //do stuff
+            if(actingBattler >= numBattlers){actingBattler = 0;}
+            else{actingBattler += 1;}
+
+            if (battlers[actingBattler] is Player){
+                ((Player)battlers[actingBattler]).battleActions();
+            }else{
+                ((Enemy)battlers[actingBattler]).battleActions();
+            }
+
+            if(battlers[actingBattler].getHealth() <= 0){endBattle(battlers);}
         }
 
-        enemy.endBattle();
+        
     }
 
+    private void endBattle(LivingEntity[] bat)
+    {
+        Enemy en;
+        for(int i = 0; i < bat.Length; i++)
+        {
+            bat[i].battleStartEnd();
+            if (bat[i] is Enemy){
+                en = (Enemy)bat[i];
+            }
+        }
+
+        //return to return scene
+    }
 }

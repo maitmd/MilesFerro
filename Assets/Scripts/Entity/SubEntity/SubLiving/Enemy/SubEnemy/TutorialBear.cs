@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeggingsGuardian : Enemy
+public class TutorialBear : Enemy
 {
     
     // Start is called before the first frame update
     void Start()
     {
-        setReturnScene("Kitchen");
-        setBattleScene("LeggingsGuardian");
+        setReturnScene("LivingRoom");
+        setBattleScene("TutorialBear");
+        setNumBattlers(1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (this.Battling())
+        if (this.isBattling())
         {
-            BattleHandler battle = GetComponent<BattleHandler>();
-            startBattle();
+            //start battle
         }
+    }
+
+    new public void battleActions()
+    {
+        
     }
 }
