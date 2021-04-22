@@ -23,14 +23,14 @@ public abstract class LivingEntity : Entity
 
     }
 
-    public LivingEntity(int maxHP, int sp)
+    /*public LivingEntity(int maxHP, int sp)
     {
         inventory = new ArrayList<Item>();
         maxHealth = maxHP;
         speed = sp;
         currentHealth = maxHP;
 
-    }
+    }*/
 
     public void setHealth(int newHealth)
     {
