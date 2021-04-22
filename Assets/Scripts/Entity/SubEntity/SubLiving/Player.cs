@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : LivingEntity, IBattler{
+public class Player : LivingEntity{
 
     public float playerSpeed = 1f;
 
@@ -28,5 +28,10 @@ public class Player : LivingEntity, IBattler{
     public void switchScene(string name)
     {
         SceneManager.LoadScene(name);
+    }
+
+    public override void battleActions()
+    {
+        //stuff
     }
 }

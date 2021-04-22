@@ -5,26 +5,35 @@ using UnityEngine;
 public class BattleHandler : MonoBehaviour
 {
     [SerializeField] private LivingEntity[] battlers;
-    private float actingBattler;
+    private int actingBattler;
     private float numBattlers;
     // Start is called before the first frame update
     void Start()
     {
-        numBattlers = enemy.getNumBattlers + 1;
+        for(int i = 0; i < battlers.Length; i++)
+        {
+            if(battlers[i] is Enemy)
+            {
+                numBattlers = ((Enemy)battlers[i]).getNumBattlers();
+                break;
+            }
+        }
+        actingBattler = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Type t;
-
-        if (battlers[actingBattler].Battling())
+        if (battlers[actingBattler].isBattling())
         {
             if(actingBattler >= numBattlers){actingBattler = 0;}
-            else{actingBattler = actingBattler++;}
+            else{actingBattler += 1;}
 
-            t = battlers[actingBattler].getType();
-            (t)battlers[actingBattler].battleActions();
+            if (battlers[actingBattler] is Player){
+                ((Player)battlers[actingBattler]).battleActions();
+            }else{
+                ((Enemy)battlers[actingBattler]).battleActions();
+            }
 
             if(battlers[actingBattler].getHealth() <= 0){endBattle(battlers);}
         }
@@ -35,11 +44,11 @@ public class BattleHandler : MonoBehaviour
     private void endBattle(LivingEntity[] bat)
     {
         Enemy en;
-        for(float i = 0; i < bat.GetLength; i++)
+        for(int i = 0; i < bat.Length; i++)
         {
-            bat[i].BattleStartEnd();
+            bat[i].battleStartEnd();
             if (bat[i] is Enemy){
-                en = bat[i];
+                en = (Enemy)bat[i];
             }
         }
 

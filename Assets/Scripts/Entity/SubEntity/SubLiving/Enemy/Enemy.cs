@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Enemy : LivingEntity, IBattler
+public class Enemy : LivingEntity
 {
     private string battleScene;
     private string returnScene;
@@ -50,5 +50,5 @@ public class Enemy : LivingEntity, IBattler
         numBattlers = n;
     }
 
-
+    public override void battleActions() { }
 }
