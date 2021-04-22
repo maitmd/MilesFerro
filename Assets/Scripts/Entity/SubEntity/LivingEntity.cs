@@ -23,9 +23,33 @@ public abstract class LivingEntity : Entity
 
     }
 
+    public LivingEntity(int maxHP, int sp)
+    {
+        inventory = new ArrayList<Item>();
+        maxHealth = maxHP;
+        speed = sp;
+        currentHealth = maxHP;
+
+    }
+
     public void setHealth(int newHealth)
     {
         currentHealth = newHealth;
+    }
+
+    public void setMaxHealth(int max)
+    {
+        maxHealth = max;
+    }
+
+    public void setSpeed(float sp)
+    {
+        speed = sp;
+    }
+
+    public void addItem(Item it)
+    {
+        inventory.Add(it);
     }
 
     public int getMaxHealth()
