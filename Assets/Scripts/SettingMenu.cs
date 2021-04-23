@@ -9,7 +9,7 @@ public class SettingMenu : MonoBehaviour
     private bool isFullscreen;
     
 
-    public void GameMenu() => SceneManager.LoadScene((int) Scenes.START_MENU);
+    public void BackButton() => SceneManager.LoadScene((int) Scenes.START_MENU);
 
 	public void Awake() {
 		if(Screen.fullScreenMode == FullScreenMode.FullScreenWindow) {

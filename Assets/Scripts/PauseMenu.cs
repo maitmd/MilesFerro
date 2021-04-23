@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -12,13 +12,13 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame(){
         if(isPaused){
             //resume game
-            Destroy(pauseUIClone);
-            //pauseUI.SetActive(false);
+            /*Destroy(pauseUIClone);*/
+            pauseUI.SetActive(false);
             Time.timeScale = 1f;
             isPaused = false;
         } else{
             //pause game
-            pauseUIClone = Instantiate(pauseUI, parent);
+            pauseUIClone = Instantiate(pauseUI);
             pauseUI.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;
