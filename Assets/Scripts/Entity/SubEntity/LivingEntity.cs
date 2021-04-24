@@ -47,10 +47,10 @@ public abstract class LivingEntity : Entity
         speed = sp;
     }
 
-    public void addItem(Item it)
+    /*public void addItem(Item it)
     {
         inventory.Add(it);
-    }
+    }*/
 
     public int getMaxHealth()
     {

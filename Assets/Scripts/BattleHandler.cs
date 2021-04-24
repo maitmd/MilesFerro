@@ -14,7 +14,7 @@ public class BattleHandler : MonoBehaviour
         {
             if(battlers[i] is Enemy)
             {
-                numBattlers = ((Enemy)battlers[i]).getNumBattlers();
+                numBattlers = ((Enemy)battlers[i]).NumBattlers;
                 break;
             }
         }
