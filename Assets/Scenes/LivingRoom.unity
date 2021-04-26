@@ -291,8 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newScene: Kitchen
-  prevScene: 
-  currentScene: 
+  currentScene: LivingRoom
+  animator: {fileID: 0}
 --- !u!19719996 &245779057
 TilemapCollider2D:
   m_ObjectHideFlags: 0

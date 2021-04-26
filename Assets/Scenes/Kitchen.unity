@@ -1771,18 +1771,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5083934743761479277}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &677523274 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5083934743092349223, guid: 7c6bf7a66933c1f4ca9308531b76d655,
-    type: 3}
-  m_PrefabInstance: {fileID: 5083934743761479277}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677523271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5921c1d6fd7ce84aa75ce33120485d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &677523277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5083934743092349216, guid: 7c6bf7a66933c1f4ca9308531b76d655,
@@ -1842,6 +1830,7 @@ GameObject:
   - component: {fileID: 830758138}
   - component: {fileID: 830758140}
   - component: {fileID: 830758139}
+  - component: {fileID: 830758141}
   m_Layer: 0
   m_Name: Side Wall
   m_TagString: Untagged
@@ -2973,6 +2962,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &830758141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830758137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b44c4af363730747b304a0ea3ba9eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newScene: LivingRoom
+  currentScene: Kitchen
+  animator: {fileID: 0}
 --- !u!1 &916195668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,18 +3133,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b7010d345b230b4aa5d45b3e40082ad, type: 3}
---- !u!114 &1078069161 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 115700791920435036, guid: 8b7010d345b230b4aa5d45b3e40082ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 1078069160}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eddc1167ae623d2478161f50ab3152df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1097308316
 GameObject:
   m_ObjectHideFlags: 0
@@ -10232,8 +10224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b88dfb8de974141b11fea203ac8f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1078069161}
-  player: {fileID: 677523274}
+  battlers: []
 --- !u!4 &2095089692
 Transform:
   m_ObjectHideFlags: 0
