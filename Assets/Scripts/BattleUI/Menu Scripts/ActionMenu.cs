@@ -6,9 +6,7 @@ namespace Battle {
 	public class ActionMenu : MonoBehaviour {
 
 		public bool isOpen_ItemMenu = false;
-		public int panelSize = 0;
 		public Animator ItemMenuAni;
-		public Animator PanelSize;
 		ItemMenu itemMenu;
 
 		private void Start() {
@@ -16,11 +14,11 @@ namespace Battle {
 		}
 
 		public void Attack(){  //uses a basic attack
-
+			CloseItems();
 		}
 
 		public void Special(){  //uses a special attack
-
+			CloseItems();
 		}
 
 		public void Items(){  //opens the sub-menu
@@ -28,16 +26,24 @@ namespace Battle {
 				ItemMenuAni.SetBool("isOpen_ItemMenu", false);
 				isOpen_ItemMenu = false;
 				itemMenu.SetAllFalse();
-				PanelSize.SetInteger("panelSize", 0);
 			} else {
 				ItemMenuAni.SetBool("isOpen_ItemMenu", true);
 				isOpen_ItemMenu = true;
-				PanelSize.SetInteger("panelSize", 1);
+			}
+		}
+
+		public void CloseItems(){
+			if(isOpen_ItemMenu){
+				ItemMenuAni.SetBool("isOpen_ItemMenu", false);
+				isOpen_ItemMenu = false;
+				itemMenu.SetAllFalse();
+			} else{
+				return;
 			}
 		}
 
 		public void Run(){  //Exits the battle
-
+			CloseItems();
 		}
 	}
 }
