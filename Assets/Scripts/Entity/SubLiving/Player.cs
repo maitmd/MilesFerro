@@ -34,5 +34,6 @@ public class Player : LivingEntity
     {
         Item it = getInventory()[itemID];
         it.Using(this);
+        Debug.Log("it works - player");
     }
 }

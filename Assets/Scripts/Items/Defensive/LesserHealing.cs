@@ -10,6 +10,7 @@ public class LesserHealing : Item{
 
 	public override void Using(LivingEntity entity) {
            entity.setHealth((int)(entity.getMaxHealth() * (healAmount)));
-	}
+        Debug.Log("it works - lh");
+    }
 
 }
