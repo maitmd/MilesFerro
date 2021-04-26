@@ -8,7 +8,7 @@ public abstract class LivingEntity : Entity
     [SerializeField] private int maxHealth;
     [SerializeField] private float speed;
     private int currentHealth;
-    private Item[] inventory = new Item[Item.getMaxItems()];
+    private Item[] inventory = Item.fillItems();
     private bool battling = false;
 
     public void setHealth(int newHealth)

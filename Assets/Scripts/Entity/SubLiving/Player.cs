@@ -33,5 +33,6 @@ public class Player : LivingEntity
     public void useItem(int itemID)
     {
         Item it = getInventory()[itemID];
+        it.Using(this);
     }
 }

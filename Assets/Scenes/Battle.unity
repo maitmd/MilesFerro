@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 1554241404}
   - component: {fileID: 1554241403}
   m_Layer: 0
-  m_Name: BattleHandler
+  m_Name: TutorialBearBattle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b88dfb8de974141b11fea203ac8f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battlers: []
+  enemyBattlers: []
+  allyBattlers: []
 --- !u!4 &1554241404
 Transform:
   m_ObjectHideFlags: 0
