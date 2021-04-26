@@ -152,8 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b88dfb8de974141b11fea203ac8f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBattlers: []
-  allyBattlers: []
+  enemyBattlers:
+  - {fileID: 0}
+  allyBattlers:
+  - {fileID: 0}
 --- !u!4 &1554241404
 Transform:
   m_ObjectHideFlags: 0
