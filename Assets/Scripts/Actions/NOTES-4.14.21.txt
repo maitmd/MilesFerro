@@ -1,9 +1,0 @@
--Created new classes for item and enemy stats that allow you to create new enemy databases and objects to store within.
-New Objects can be created by RightClicking - Create - Assets and selecting what you wish to create.
-
--Idea is to make the implementation of custom enemies and (if included) items easier and more standardized.
--Open to suggestions on what stats to include in the current and future data classes.
-PLANNED NEXT STEP:
-Integrate these data classes with existing scripts - current classes are not implemented into rest of game
-and are mainly proof of concepts to test this database method.
-

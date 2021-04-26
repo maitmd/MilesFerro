@@ -8,29 +8,8 @@ public abstract class LivingEntity : Entity
     [SerializeField] private int maxHealth;
     [SerializeField] private float speed;
     private int currentHealth;
-    private ArrayList inventory;
+    private Item[] inventory = new Item[Item.getMaxItems()];
     private bool battling = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    /*public LivingEntity(int maxHP, int sp)
-    {
-        inventory = new ArrayList<Item>();
-        maxHealth = maxHP;
-        speed = sp;
-        currentHealth = maxHP;
-
-    }*/
 
     public void setHealth(int newHealth)
     {
@@ -47,10 +26,22 @@ public abstract class LivingEntity : Entity
         speed = sp;
     }
 
-    /*public void addItem(Item it)
+    public void addItem(Item it)
     {
-        inventory.Add(it);
-    }*/
+        inventory[it.getID()].AddItem();
+    }
+
+    public void removeItem(Item it)
+    {
+        Item temp = inventory[it.getID()];
+        if (temp.getAmount() <= 0)
+        {
+            temp.setAmount(0);
+        } else
+        {
+            temp.SubtractItem();
+        }
+    }
 
     public int getMaxHealth()
     {
@@ -67,6 +58,11 @@ public abstract class LivingEntity : Entity
         return speed;
     }
 
+    public Item[] getInventory()
+    {
+        return inventory;
+    }
+
     public bool isBattling()
     {
         return battling;
@@ -76,6 +72,5 @@ public abstract class LivingEntity : Entity
     {
         battling = !battling;
     }
-
     public abstract void battleActions();
 }

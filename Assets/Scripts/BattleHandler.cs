@@ -4,41 +4,23 @@ using UnityEngine;
 
 public class BattleHandler : MonoBehaviour
 {
-    [SerializeField] private LivingEntity[] battlers;
-    private int actingBattler;
+    [SerializeField] private Enemy[] enemyBattlers;
+    [SerializeField] private Player[] allyBattlers;
     private float numBattlers;
+    private LivingEntity actingEntity;
+    private bool playerTurn;
+
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < battlers.Length; i++)
-        {
-            if(battlers[i] is Enemy)
-            {
-                numBattlers = ((Enemy)battlers[i]).NumBattlers;
-                break;
-            }
-        }
-        actingBattler = 0;
+        fillEnemies(enemyBattlers[0]);
+        fillAllies(allyBattlers[0]);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (battlers[actingBattler].isBattling())
-        {
-            if(actingBattler >= numBattlers){actingBattler = 0;}
-            else{actingBattler += 1;}
 
-            if (battlers[actingBattler] is Player){
-                ((Player)battlers[actingBattler]).battleActions();
-            }else{
-                ((Enemy)battlers[actingBattler]).battleActions();
-            }
-
-            if(battlers[actingBattler].getHealth() <= 0){endBattle(battlers);}
-        }
-
-        
     }
 
     private void endBattle(LivingEntity[] bat)
@@ -53,5 +35,17 @@ public class BattleHandler : MonoBehaviour
         }
 
         //return to return scene
+    }
+
+    public void fillEnemies(Enemy en)
+    {
+        //pull from stored arrayList of enemies in Enemy [Not implemented in Enemy]
+    }
+
+    public void fillAllies(Player pl)
+    {
+        
+        //possibly in the future you will have allies in the game I would suggest making an Ally class and derive Player from it
+        //additionally just like Enemies will store their mob in the main enemy have the player store allies in an arraylist as well
     }
 }
