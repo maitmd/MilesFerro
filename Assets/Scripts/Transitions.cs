@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class Transitions : MonoBehaviour
 {
 	public string newScene;
-	public Stack<string> prevScene;
 	public string currentScene;
-
-	public Animator animator;
+	//public Animator animator;
 
 	/*private void OnTriggerEnter2D(Collider2D other) {
         //Debug.Log("Miles Ferro just collided with " + other.name);
@@ -21,16 +15,16 @@ public class Transitions : MonoBehaviour
         //SceneManager.LoadScene(newScene);
 	}*/
 
-	public void inRadius(){
+/*	public void inRadius(){
 		animator.SetBool("IsOpen", true);
-	}
+	}*/
 
 	private void OnTriggerEnter2D(Collider2D collision){
 		if (gameObject.CompareTag("Enemy")){
 			Time.timeScale = 0f;//stops previous scene while BattleScene is active
-
-			SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
-			prevScene.Push(newScene);
+			StartCoroutine(AsyncLoad(false,newScene));
+			//SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
+			TransitionStack.PushScene(newScene);
 
 			SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene)); //if this doesn't work properly
 			//tell me so I can switch method to Async coroutines
@@ -39,85 +33,109 @@ public class Transitions : MonoBehaviour
 
 	private void OnTriggerStay2D(Collider2D collision) {
 		if (gameObject.CompareTag("Door")) {  //please have any interactable load zone tagged Door for this to work
-			if (Input.GetKey(KeyCode.E)) {
+			if (Input.GetKeyDown(KeyCode.E)) {
 				//prevScene = currentScene;
-				SceneManager.LoadScene(newScene, LoadSceneMode.Single);
-				prevScene.Push(newScene);
+				//SceneManager.LoadScene(newScene, LoadSceneMode.Single);
+				StartCoroutine(AsyncLoad(true, newScene));
+				TransitionStack.PushScene(newScene);
 				//SceneManager.LoadScene(newScene);
 
 			}
 		}
 		if (gameObject.CompareTag("Enemy")) {
 			//This is for boss/stationary enemies you interact with to battle
-			if (Input.GetKey(KeyCode.E)) {
+			if (Input.GetKeyDown(KeyCode.E)) {
 				//prevScene = currentScene;
-				SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
+				StartCoroutine(AsyncLoad(false, newScene));
+				//SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
 				//SceneManager.LoadScene(newScene);
-				prevScene.Push(currentScene);
+				TransitionStack.PushScene(currentScene);
 				SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene)); //if this doesn't work properly
 				//tell me so I can switch method to Async coroutines
 			}
 		}
 	}
 
-	public void battleEnd(){  //call proper scene from here
+	public void BattleEnd(){  //call proper scene from here
 		if (newScene.Equals("Win")){
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(prevScene.Peek()));
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName(TransitionStack.PeekScene()));
 
 			Time.timeScale = 1f;//unpauses previous scene
 			SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Battle"));//after destroying BattleScene
-			prevScene.Pop();
+			TransitionStack.PopScene();
 			//We need to remove the object from Scene
 		}
 		if (newScene.Equals("Lose")){//change this when we have have a lose scene
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(prevScene.Peek()));
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName(TransitionStack.PeekScene()));
 			Time.timeScale = 1f;//unpauses previous scene
 
 			SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Battle"));//after destroying BattleScene
-			prevScene.Pop();
+			TransitionStack.PopScene();
 		}
 		if (newScene.Equals("Escape")){
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(prevScene.Peek()));
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName(TransitionStack.PeekScene()));
 			Time.timeScale = 1f;//unpauses previous scene
 			SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Battle"));//after destroying BattleScene
-			prevScene.Pop();
+			TransitionStack.PopScene();
 		}
 		//Add other Scenes as necessary
 	}
 
-	public void nonGameScene(string newScene, string currentScene, bool multi){
-		if(multi){
-			SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
-			prevScene.Push(currentScene);
-		} else {
-			SceneManager.LoadScene(newScene, LoadSceneMode.Single);
-			prevScene.Push(currentScene);
+	public void NonGameScene(string newScene, string currentScene, bool single){
+		Time.timeScale = 0f;
+		if(!single) { //Loading Additively
+			print(SceneManager.GetActiveScene().name + " Before Coroutine");
+			StartCoroutine(AsyncLoad(single, newScene));
+			StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(newScene)));
+			TransitionStack.PushScene(currentScene);
+		} else { //Loading Single
+			StartCoroutine(AsyncLoad(single, newScene));
+			TransitionStack.PushScene(currentScene);
 		}
 	}
 	//only use for additive scenes
-	public void returnScene(string currentScene){
-		SceneManager.SetActiveScene(SceneManager.GetSceneByName(prevScene.Pop()));
+	public void ReturnScene(string currentScene){
+		if(currentScene == "SettingScene" && TransitionStack.PeekScene() == "LivingRoom") {
+			TransitionStack.PushScene("PauseScreen");
+			StartCoroutine(AsyncLoad(false, TransitionStack.PeekScene()));
+			StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(TransitionStack.PeekScene())));
+		} else {
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName(TransitionStack.PeekScene()));
+		}
 		SceneManager.UnloadSceneAsync(currentScene);
-
+		if(SceneManager.GetActiveScene().name != "PauseScreen") {
+			Time.timeScale = 1f;
+		}
+		TransitionStack.PopScene();
 	}
 
-	private void loadScene(){
+	public void doubleNonGame(string newScene, string currentScene){
+		Time.timeScale = 0f;
+		StartCoroutine(AsyncLoad(false, newScene));
+		StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(newScene)));
+		SceneManager.UnloadSceneAsync(currentScene);
 	}
 
-	/*IEnumerator AsyncLoad(bool single){ //if true, sceneLoadMode = Single.  If false, sceneLoadMode = Additive
-			if (!single){ //if Scene was to be additive
-				AsyncOperation load = SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
+	IEnumerator AsyncLoad(bool single, string newScene) { //if true, sceneLoadMode = Single.  If false, sceneLoadMode = Additive
+		AsyncOperation load;
 
-
-				}
-			else{ //if not single
-
-				}
-			while(!load.isDone){
-			}
-			SceneManager.setActiveScene(SceneManger.getSceneByName(newScene));
-		}*/
-
+		if(!single) { //if Scene was to be additive
+			load = SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
+		} else { //if single
+			load = SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Single);
+		}
+		while(!load.isDone) {
+			yield return null;
+		}
+	}
+	IEnumerator WaitForSceneLoad(Scene scene) {
+		while(!scene.isLoaded) {
+			yield return null;
+		}
+		Debug.Log("Setting active scene..");
+		SceneManager.SetActiveScene(scene);
+		print(SceneManager.GetActiveScene().name);
+	}
 }
 
 

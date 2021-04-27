@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - FullscreenButton
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,6 @@ public enum Scenes{
 	INVENTORY = 2,
 	LIVING_ROOM = 3,
 	KITCHEN = 4,
-	BATTLE_SCREEN = 5
-	/*PAUSE_MENU = 6*/
+	BATTLE_SCREEN = 5,
+	PAUSE_MENU = 6
 }

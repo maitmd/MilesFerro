@@ -6,7 +6,7 @@ namespace Battle {
 		static public bool isOpen = false;
 
 		private void Start() {
-			lesser = new Items.LesserHealing();
+			lesser = gameObject.AddComponent<Items.LesserHealing>();
 		}
 		
 		public void LesserHealingItems(){ //uses a Lesser Healing Item;
