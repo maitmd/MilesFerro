@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 	//private PauseMenu pauseMenu;
-	private Transitions transition;
+
 	private PlayerAnimation playerAnimation;
 	private CheckInteraction checkInteraction;
 
@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour {
 	private void Awake() {
 		playerAnimation = gameObject.GetComponent<PlayerAnimation>();
 		checkInteraction = gameObject.GetComponent<CheckInteraction>();
-		transition = gameObject.AddComponent<Transitions>();
+		
+
 	}
 
 	void Update() {
@@ -37,14 +38,11 @@ public class PlayerController : MonoBehaviour {
 			moveX = +moveConst;
 		}
 
-		if(Input.GetKeyDown(KeyCode.E)) {
+		/*if(Input.GetKeyDown(KeyCode.E)) {
 			checkInteraction.CheckInteractable();
-		}
+		}*/
 
-		if(Input.GetKeyDown(KeyCode.Escape)) {
-			print("Pressed Button");
-			transition.NonGameScene("PauseScreen", SceneManager.GetActiveScene().name, false);
-		}
+		
 	}
 
 	private void FixedUpdate() {
