@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Kitchen.unity
     guid: 4399bfbed97697d48bdc808bc6c41d3b
   - enabled: 1
-    path: Assets/Scenes/LeggingsGuardian.unity
-    guid: 2876bfffab68aec4c85910681b449525
+    path: Assets/Scenes/BattleUI.unity
+    guid: 885f0cb72aa83e34eb0481194e7ab142
+  - enabled: 1
+    path: Assets/Scenes/PauseScreen.unity
+    guid: 2319c579cf42c014b899fbb0ffdf3b19
   m_configObjects: {}

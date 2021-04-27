@@ -7,12 +7,21 @@ public class SettingMenu : MonoBehaviour
     public TMP_Text buttonText;
     public TMP_Dropdown selected;
     private bool isFullscreen;
-    
+    Transitions transition;
+    public Camera cam;
 
-    public void BackButton() => SceneManager.LoadScene((int) Scenes.START_MENU);
 
-	public void Awake() {
-		if(Screen.fullScreenMode == FullScreenMode.FullScreenWindow) {
+    public void BackButton() {
+        transition.ReturnScene("SettingScene");
+    }
+
+	private void Awake() {
+        transition = gameObject.AddComponent<Transitions>();
+        cam.cullingMask = 5;
+    }
+
+	public void Start() {
+        if(Screen.fullScreenMode == FullScreenMode.FullScreenWindow) {
 			buttonText.SetText("Fullscreen");
             isFullscreen = true;
 		} else {

@@ -3,37 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public Transitions transition;
 
-    public static bool isPaused = false;
-    public GameObject pauseUI;
-    public Transform parent;
-    private GameObject pauseUIClone;
-
-    public void PauseGame(){
-        if(isPaused){
-            //resume game
-            /*Destroy(pauseUIClone);*/
-            pauseUI.SetActive(false);
-            Time.timeScale = 1f;
-            isPaused = false;
-        } else{
-            //pause game
-            pauseUIClone = Instantiate(pauseUI);
-            pauseUI.SetActive(true);
-            Time.timeScale = 0f;
-            isPaused = true;
-		}
+	private void Start() {
+        transition = gameObject.AddComponent<Transitions>();
 	}
 
     public void ResumeButton(){
-        PauseGame();
+		print("Resuming Game");
+        transition.ReturnScene("PauseScreen");
 	}
 
     public void SettingsButton(){
-        SceneManager.LoadSceneAsync((int)Scenes.SETTINGS);
+        
+        transition.doubleNonGame("SettingScene", SceneManager.GetActiveScene().name);
 	}
 
 	public void QuitButton() {
-        Application.Quit();
+        print("quitting");
+        //Application.Quit();
 	}
 }

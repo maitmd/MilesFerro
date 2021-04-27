@@ -1,19 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour {
 
-	public void PlayButton() => SceneManager.LoadScene((int)Scenes.LIVING_ROOM);
+	Transitions transitions;
+
+	void Start() {
+		transitions = gameObject.AddComponent<Transitions>();
+	}
+
+	public void PlayButton() {
+		transitions.NonGameScene("LivingRoom", SceneManager.GetActiveScene().name, true);
+	}
 	
 	public void ContinueButton() {
 		print("Continue");
 	}
 
-	public void SettingsButton() => SceneManager.LoadScene((int)Scenes.SETTINGS);
+	public void SettingsButton() {
+		gameObject.AddComponent<Camera>();
+		transitions.NonGameScene("SettingScene", SceneManager.GetActiveScene().name, false);
+	}
 
-	public void QuitButton() =>
-		//print("Quit");
-		Application.Quit();
+	public void QuitButton() {
+		print("Quit");
+		//Application.Quit();
+	}
 }
