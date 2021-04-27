@@ -3,38 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Transitions : MonoBehaviour {
+public class Transitions : MonoBehaviour
+{
 	public string newScene;
 	public string currentScene;
+	//public Animator animator;
 
-	private void OnTriggerEnter2D(Collider2D collision) {
-		if(gameObject.CompareTag("Enemy")) {
-			Time.timeScale = 0f; //stops previous scene while BattleScene is active
-			StartCoroutine(AsyncLoad(false, newScene));
+	/*private void OnTriggerEnter2D(Collider2D other) {
+        //Debug.Log("Miles Ferro just collided with " + other.name);
+        //call GameController and send
+        //SceneManager.LoadScene(newScene);
+	}*/
+
+/*	public void inRadius(){
+		animator.SetBool("IsOpen", true);
+	}*/
+
+	private void OnTriggerEnter2D(Collider2D collision){
+		if (gameObject.CompareTag("Enemy")){
+			Time.timeScale = 0f;//stops previous scene while BattleScene is active
+			StartCoroutine(AsyncLoad(false,newScene));
+			//SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
 			TransitionStack.PushScene(newScene);
 
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene));
-			//if this doesn't work properly tell me so I can switch method to Async coroutines
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene)); //if this doesn't work properly
+			//tell me so I can switch method to Async coroutines
 		}
 	}
 
-	private void EnemyObject(string newScene){
-		Time.timeScale = 0f; //stops previous scene while BattleScene is active
-		StartCoroutine(AsyncLoad(false, newScene));
-		TransitionStack.PushScene(newScene);
-
-		SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene));
-		//if this doesn't work properly tell me so I can switch method to Async coroutines
-	}
-
-	private void DoorObject(string newScene){
-		StartCoroutine(AsyncLoad(true, newScene));
-		TransitionStack.PushScene(newScene);
-	}
-
 	private void OnTriggerStay2D(Collider2D collision) {
-		if(gameObject.CompareTag("Door")) {  //please have any interactable load zone tagged Door for this to work
-			if(Input.GetKeyDown(KeyCode.E)) {
+		if (gameObject.CompareTag("Door")) {  //please have any interactable load zone tagged Door for this to work
+			if (Input.GetKeyDown(KeyCode.E)) {
 				//prevScene = currentScene;
 				//SceneManager.LoadScene(newScene, LoadSceneMode.Single);
 				StartCoroutine(AsyncLoad(true, newScene));
@@ -43,16 +42,16 @@ public class Transitions : MonoBehaviour {
 
 			}
 		}
-		if(gameObject.CompareTag("Enemy")) {
+		if (gameObject.CompareTag("Enemy")) {
 			//This is for boss/stationary enemies you interact with to battle
-			if(Input.GetKeyDown(KeyCode.E)) {
+			if (Input.GetKeyDown(KeyCode.E)) {
 				//prevScene = currentScene;
 				StartCoroutine(AsyncLoad(false, newScene));
 				//SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
 				//SceneManager.LoadScene(newScene);
 				TransitionStack.PushScene(currentScene);
-				SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene)); 
-				//if this doesn't work properly tell me so I can switch method to Async coroutines
+				SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene)); //if this doesn't work properly
+				//tell me so I can switch method to Async coroutines
 			}
 		}
 	}
