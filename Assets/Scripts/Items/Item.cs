@@ -46,5 +46,5 @@ public abstract class Item : MonoBehaviour
         return items;
     }
 
-    abstract public void Using(LivingEntity entity);
+    abstract public void Using(LivingEntity self, LivingEntity targself);
 }

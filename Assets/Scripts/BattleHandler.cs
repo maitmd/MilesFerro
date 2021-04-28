@@ -30,6 +30,7 @@ public class BattleHandler : MonoBehaviour
         playerHealthBar.SetMaxHealth(allyBattlers[0].MaxHealth);
         enemyHealthBar.SetMaxHealth(enemyBattlers[0].MaxHealth);
         enemyName.GetComponent<TextMeshPro>().SetText(enemyBattlers[0].Name);
+        playerTurn = true;
     }
 
     // Update is called once per frame

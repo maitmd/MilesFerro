@@ -9,21 +9,23 @@ public class Player : LivingEntity
     {
     }
 
-    public void standardAttack()
+    public void standardAttack(Enemy targ)
     {
-
+        float plusOrMinus = Random.Range(0f, 10f);
+        targ.CurrentHealth -= (10 + plusOrMinus) * AttackBonus;
         AttackBonus = 1;
     }
 
-    public void specialAttack()
+    public void specialAttack(Enemy targ)
     {
-
+        float plusOrMinus = Random.Range(0f, 20f);
+        targ.CurrentHealth -= (30 + plusOrMinus) * AttackBonus;
         AttackBonus = 1;
     }
 
     public void useItem(int itemID)
     {
         Item it = this.Inventory[itemID];
-        it.Using(this);
+        it.Using(this, targ);
     }
 }
