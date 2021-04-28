@@ -99,6 +99,30 @@ public class BattleHandler : MonoBehaviour
         {
             enemyHealthBar.SetHealth(enemyBattlers[i].CurrentHealth);
         }
-        
     }
+
+    public void fillEnemies(Enemy en) {
+	//pull from stored arrayList of enemies in Enemy [Not implemented in Enemy]
+    }
+
+public void fillAllies(Player pl) {
+
+	//possibly in the future you will have allies in the game I would suggest making an Ally class and derive Player from it
+	//additionally just like Enemies will store their mob in the main enemy have the player store allies in an arraylist as well
+}
+
+public void switchTurn() {
+	playerTurn = !playerTurn;
+}
+
+public void updateHealth() {
+	for(int i = 0; i < allyIndex; i++) {
+		playerHealthBar.SetHealth(allyBattlers[i].CurrentHealth);
+	}
+
+	for(int i = 0; i < enemyIndex; i++) {
+		enemyHealthBar.SetHealth(enemyBattlers[i].CurrentHealth);
+	}
+
+}
 }
