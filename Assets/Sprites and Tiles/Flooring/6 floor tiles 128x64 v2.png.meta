@@ -1,0 +1,306 @@
+fileFormatVersion: 2
+guid: 7dd877c62b825da47a2b4c4f0fb0626a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1880759443628445097
+    second: 6 floor tiles 128x64 v2_0
+  - first:
+      213: -6889007518588256180
+    second: 6 floor tiles 128x64 v2_1
+  - first:
+      213: 881370648236556478
+    second: 6 floor tiles 128x64 v2_2
+  - first:
+      213: 2806708748344414580
+    second: 6 floor tiles 128x64 v2_3
+  - first:
+      213: 351229800299235846
+    second: 6 floor tiles 128x64 v2_4
+  - first:
+      213: 8384978258492565073
+    second: 6 floor tiles 128x64 v2_5
+  - first:
+      213: -3638109234498953903
+    second: 6 floor tiles 128x64 v2_6
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 6 floor tiles 128x64 v2_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 248
+        width: 128
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: -32}
+        - {x: -64, y: 3}
+        - {x: 0, y: 36}
+        - {x: 64, y: 4}
+        - {x: 64, y: -4}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752b09e204336e5e0800000000000000
+      internalID: -1880759443628445097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6 floor tiles 128x64 v2_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 248
+        width: 128
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64, y: 3}
+        - {x: 0, y: 36}
+        - {x: 64, y: 4}
+        - {x: 64, y: -3}
+        - {x: 7, y: -32}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c404d8f49245560a0800000000000000
+      internalID: -6889007518588256180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6 floor tiles 128x64 v2_2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 242
+        width: 128
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64, y: 4}
+        - {x: 0, y: 36}
+        - {x: 64, y: 4}
+        - {x: 64, y: -3}
+        - {x: 6, y: -32}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb088935fe14b3c00800000000000000
+      internalID: 881370648236556478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6 floor tiles 128x64 v2_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 247
+        width: 128
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471dc0d6cbe63f620800000000000000
+      internalID: 2806708748344414580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6 floor tiles 128x64 v2_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 71
+        width: 128
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64, y: 3.5}
+        - {x: 0, y: 36.5}
+        - {x: 64, y: 4.5}
+        - {x: 64, y: -4.5}
+        - {x: 8, y: -32.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a0e5974a1dfd400800000000000000
+      internalID: 351229800299235846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6 floor tiles 128x64 v2_5
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 72
+        width: 128
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: -33}
+        - {x: -64, y: 3}
+        - {x: -1, y: 36}
+        - {x: 64, y: 3}
+        - {x: 64, y: -4}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156a2d2fc4d6d5470800000000000000
+      internalID: 8384978258492565073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6 floor tiles 128x64 v2_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 72
+        width: 128
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: -32}
+        - {x: -64, y: 4}
+        - {x: 0, y: 36}
+        - {x: 64, y: 4}
+        - {x: 64, y: -4}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d1f9f3de6d28dc0800000000000000
+      internalID: -3638109234498953903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
