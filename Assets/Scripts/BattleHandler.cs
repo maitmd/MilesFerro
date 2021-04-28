@@ -39,7 +39,6 @@ public class BattleHandler : MonoBehaviour
         {
             playerPanel.SetActive(true);
             allyIndex++;
-            playerTurn = false;
         }
         else
         {
@@ -63,7 +62,7 @@ public class BattleHandler : MonoBehaviour
             float randEnemy = Random.Range(0f, ((float)(allyBattlers.Length)));
             enemyBattlers[enemyIndex].battleActions(allyBattlers[(int)randEnemy]);
 
-            playerTurn = true;
+            switchTurn();
 
             enemyIndex++;
             allyIndex++;
@@ -96,6 +95,11 @@ public class BattleHandler : MonoBehaviour
         
         //possibly in the future you will have allies in the game I would suggest making an Ally class and derive Player from it
         //additionally just like Enemies will store their mob in the main enemy have the player store allies in an arraylist as well
+    }
+
+    public void switchTurn()
+    {
+        playerTurn = !playerTurn;
     }
 
     public void updateHealth()
