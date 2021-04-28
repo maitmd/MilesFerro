@@ -71,19 +71,6 @@ public class BattleHandler : MonoBehaviour
         updateHealth();
     }
 
-        private void endBattle(LivingEntity[] bat) {
-            Enemy en;
-            for(int i = 0; i < bat.Length; i++) {
-                bat[i].battleStartEnd();
-                if(bat[i] is Enemy) {
-                    en = (Enemy)bat[i];
-                }
-            }
-
-            //return to return scene
-        }
-    }
-
     public void fillEnemies(Enemy en)
     {
         //pull from stored arrayList of enemies in Enemy [Not implemented in Enemy]

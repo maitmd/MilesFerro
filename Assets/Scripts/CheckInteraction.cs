@@ -6,7 +6,7 @@ public class CheckInteraction : MonoBehaviour
 {
     public GameObject interactableIcon;
     private GameObject interactClone;
-    Vector3 boxSize = new Vector3(.3f, 2f);
+    Vector3 boxSize = new Vector3(5f, 5f);
 
     public void OpenInteractable() {
         interactClone = Instantiate(interactableIcon);
