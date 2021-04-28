@@ -205,7 +205,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 78041279}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1602374355}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: useItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602374353}
+        m_TargetAssemblyTypeName: BattleHandler, Assembly-CSharp
+        m_MethodName: switchTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &78041279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +654,6 @@ GameObject:
   m_Component:
   - component: {fileID: 113217489}
   - component: {fileID: 113217490}
-  - component: {fileID: 113217491}
   m_Layer: 0
   m_Name: HealingItems
   m_TagString: Untagged
@@ -681,20 +704,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &113217491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113217488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5921c1d6fd7ce84aa75ce33120485d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
 --- !u!1 &114104669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,7 +2415,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991645400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1602374355}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: specialAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602374353}
+        m_TargetAssemblyTypeName: BattleHandler, Assembly-CSharp
+        m_MethodName: switchTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &991645400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3051,9 +3084,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: e5921c1d6fd7ce84aa75ce33120485d0, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 1602374355}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: standardAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3061,6 +3094,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Entity
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602374353}
+        m_TargetAssemblyTypeName: BattleHandler, Assembly-CSharp
+        m_MethodName: switchTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1111043852
@@ -3471,7 +3516,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1215080316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1602374355}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: useItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602374353}
+        m_TargetAssemblyTypeName: BattleHandler, Assembly-CSharp
+        m_MethodName: switchTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1215080316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5397,6 +5466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602374354}
+  - component: {fileID: 1602374355}
   - component: {fileID: 1602374353}
   m_Layer: 0
   m_Name: Player
@@ -5414,15 +5484,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602374352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1895b038af8af0646b78b91a43a3077c, type: 3}
+  m_Script: {fileID: 11500000, guid: 86b88dfb8de974141b11fea203ac8f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMaxHealth: 100
-  playerCurrentHealth: 0
-  enemyMaxHealth: 150
-  enemyCurrentHealth: 0
+  enemyBattlers:
+  - {fileID: 0}
+  allyBattlers:
+  - {fileID: 0}
   playerHealthBar: {fileID: 1096012385}
   enemyHealthBar: {fileID: 1592064046}
+  playerPanel: {fileID: 245494776}
+  enemyName: {fileID: 1554241402}
 --- !u!4 &1602374354
 Transform:
   m_ObjectHideFlags: 0
@@ -5438,6 +5510,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602374355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602374352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5921c1d6fd7ce84aa75ce33120485d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
 --- !u!1 &1639589230
 GameObject:
   m_ObjectHideFlags: 0
@@ -5520,7 +5606,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1639589233}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1602374355}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: useItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602374353}
+        m_TargetAssemblyTypeName: BattleHandler, Assembly-CSharp
+        m_MethodName: switchTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1639589233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5763,10 +5873,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 113217491}
+      - m_Target: {fileID: 1602374355}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: useItem
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602374353}
+        m_TargetAssemblyTypeName: BattleHandler, Assembly-CSharp
+        m_MethodName: switchTurn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6418,7 +6540,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1835476646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1602374355}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: useItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602374353}
+        m_TargetAssemblyTypeName: BattleHandler, Assembly-CSharp
+        m_MethodName: switchTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1835476646
 MonoBehaviour:
   m_ObjectHideFlags: 0
