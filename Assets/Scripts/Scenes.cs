@@ -10,5 +10,6 @@ public enum Scenes{
 	LIVING_ROOM = 3,
 	KITCHEN = 4,
 	BATTLE_SCREEN = 5,
-	PAUSE_MENU = 6
+	PAUSE_MENU = 6,
+	CREDITS = 7
 }
