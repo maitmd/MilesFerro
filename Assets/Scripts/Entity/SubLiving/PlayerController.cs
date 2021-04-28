@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 	private PlayerAnimation playerAnimation;
 	private CheckInteraction checkInteraction;
 
-	[SerializeField] private float playerSpeed = 2f;
+	private float playerSpeed = 2f;
 	private Vector3 lastDirection = new Vector3(0, 0);
 
 	float moveX, moveY;

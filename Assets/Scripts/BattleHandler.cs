@@ -1,39 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-namespace Battle {
-    public class BattleHandler : MonoBehaviour {
-        [SerializeField] private LivingEntity[] battlers;
-        private int actingBattler;
-        private float numBattlers;
-        // Start is called before the first frame update
-        void Start() {
-            for(int i = 0; i < battlers.Length; i++) {
-                if(battlers[i] is Enemy) {
-                    numBattlers = ((Enemy)battlers[i]).NumBattlers;
-                    break;
-                }
+public class BattleHandler : MonoBehaviour
+{
+    [SerializeField] private Enemy[] enemyBattlers;
+    [SerializeField] private Player[] allyBattlers;
+
+    public HealthBarUI playerHealthBar;
+    public HealthBarUI enemyHealthBar;
+    [SerializeField] public GameObject playerPanel;
+    [SerializeField] public GameObject enemyName;
+
+    private float numBattlers;
+    private LivingEntity actingEntity;
+
+    private bool playerTurn;
+    private int allyIndex;
+    private int enemyIndex;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        fillEnemies(enemyBattlers[0]);
+        fillAllies(allyBattlers[0]);
+        allyIndex = 0;
+        enemyIndex = 0;
+        playerHealthBar.SetMaxHealth(allyBattlers[0].MaxHealth);
+        enemyHealthBar.SetMaxHealth(enemyBattlers[0].MaxHealth);
+        enemyName.GetComponent<TextMeshPro>().SetText(enemyBattlers[0].Name);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (playerTurn)
+        {
+            playerPanel.SetActive(true);
+            allyIndex++;
+            playerTurn = false;
+        }
+        else
+        {
+            if(allyIndex >= allyBattlers.Length)
+            {
+                allyIndex = 0;
             }
-            actingBattler = 0;
+
+            if (enemyIndex >= enemyBattlers.Length)
+            {
+                enemyIndex = 0;
+            }
+
+            playerPanel.SetActive(false);
+            if (!(allyBattlers[allyIndex] is Player))
+            {
+                float randAlly = Random.Range(0f, ((float)(enemyBattlers.Length)));
+                allyBattlers[allyIndex].battleActions(enemyBattlers[(int)randAlly]);
+            }
+
+            float randEnemy = Random.Range(0f, ((float)(allyBattlers.Length)));
+            enemyBattlers[enemyIndex].battleActions(allyBattlers[(int)randEnemy]);
+
+            playerTurn = true;
+
+            enemyIndex++;
+            allyIndex++;
         }
 
-        // Update is called once per frame
-        void Update() {
-            if(battlers[actingBattler].isBattling()) {
-                if(actingBattler >= numBattlers) { actingBattler = 0; } else { actingBattler += 1; }
-
-                if(battlers[actingBattler] is Player) {
-                    ((Player)battlers[actingBattler]).battleActions();
-                } else {
-                    ((Enemy)battlers[actingBattler]).battleActions();
-                }
-
-                if(battlers[actingBattler].getHealth() <= 0) { endBattle(battlers); }
-            }
-
-
-        }
+        updateHealth();
+    }
 
         private void endBattle(LivingEntity[] bat) {
             Enemy en;
@@ -46,5 +83,31 @@ namespace Battle {
 
             //return to return scene
         }
+    }
+
+    public void fillEnemies(Enemy en)
+    {
+        //pull from stored arrayList of enemies in Enemy [Not implemented in Enemy]
+    }
+
+    public void fillAllies(Player pl)
+    {
+        
+        //possibly in the future you will have allies in the game I would suggest making an Ally class and derive Player from it
+        //additionally just like Enemies will store their mob in the main enemy have the player store allies in an arraylist as well
+    }
+
+    public void updateHealth()
+    {
+        for(int i = 0; i < allyIndex; i++)
+        {
+            playerHealthBar.SetHealth(allyBattlers[i].CurrentHealth);
+        }
+
+        for (int i = 0; i < enemyIndex; i++)
+        {
+            enemyHealthBar.SetHealth(enemyBattlers[i].CurrentHealth);
+        }
+        
     }
 }
