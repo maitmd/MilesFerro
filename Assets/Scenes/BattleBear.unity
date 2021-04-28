@@ -5955,11 +5955,7 @@ MonoBehaviour:
   enemyBattlers:
   - {fileID: 1602374356}
   allyBattlers:
-<<<<<<< Updated upstream:Assets/Scenes/BattleUI-ItemIntegrationBackup.unity
-  - {fileID: 6802155491526677612, guid: eb352b646670f80489d1c3075569ea34, type: 3}
-=======
   - {fileID: 1602374355}
->>>>>>> Stashed changes:Assets/Scenes/BattleBear.unity
   playerHealthBar: {fileID: 1096012385}
   enemyHealthBar: {fileID: 1592064046}
   playerPanel: {fileID: 245494776}
@@ -6005,13 +6001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddc1167ae623d2478161f50ab3152df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream:Assets/Scenes/BattleUI-ItemIntegrationBackup.unity
-  maxHealth: 0
-  currentHealth: 0
-=======
   maxHealth: 150
   currentHealth: 150
->>>>>>> Stashed changes:Assets/Scenes/BattleBear.unity
 --- !u!1 &1639589230
 GameObject:
   m_ObjectHideFlags: 0
