@@ -2,20 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BattleItems {
-	public abstract class Item : MonoBehaviour{
-		
-		public string itemName;
-		public int amount;
+public abstract class Item : MonoBehaviour
+{
+    private const int MAXITEMS = 1;
+    private string itemName
+    {
+        get { return itemName; }
+        set { itemName = value; }
+    }
 
-		protected Item(string item, int number){
-			this.itemName = item;
-			this.amount = number;
-		}
+    private int amount
+    {
+        get { return amount; }
+        set { amount = value; }
+    }
 
-		abstract public void Using();
-		abstract public void SubtractItem();
-		abstract public void AddingItem();
+    private int id
+    {
+        get { return id; }
+        set { id = value; }
+    }
 
-	}
+    public int SubtractItem()
+    {
+        amount--;
+        return this.amount;
+    }
+
+    public int AddItem()
+    {
+        amount++;
+        return this.amount;
+    }
+
+    public static int getMaxItems()
+    {
+        return MAXITEMS;
+    }
+
+    public static Item[] fillItems()
+    {
+        Item[] items = { new LesserHealing(), new GreaterHealing()};
+        return items;
+    }
+
+    abstract public void Using(LivingEntity entity);
 }

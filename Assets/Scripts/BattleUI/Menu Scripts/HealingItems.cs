@@ -10,7 +10,11 @@ namespace Battle {
 		}
 		
 		public void LesserHealingItems(){ //uses a Lesser Healing Item;
+
 			//lesser.UsingItem();
+
+           
+
 		}
 
 		public void GreaterHealingItems() { //uses a Greater Healing Item;
