@@ -10,8 +10,8 @@ public class GreaterHealing : Item
     private int id = 1;
 
 
-    public override void Using(LivingEntity entity)
+    public override void Using(LivingEntity self, LivingEntity targ)
     {
-        entity.CurrentHealth += (entity.MaxHealth * healAmount);
+        self.CurrentHealth += (self.MaxHealth * healAmount);
     }
 }

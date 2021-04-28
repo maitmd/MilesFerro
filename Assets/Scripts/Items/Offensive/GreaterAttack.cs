@@ -10,8 +10,8 @@ public class GreaterAttack : Item
     private int id = 3;
 
 
-    public override void Using(LivingEntity entity)
+    public override void Using(LivingEntity self, LivingEntity targ)
     {
-        entity.AttackBonus = attackBonus;
+        self.AttackBonus = attackBonus;
     }
 }
