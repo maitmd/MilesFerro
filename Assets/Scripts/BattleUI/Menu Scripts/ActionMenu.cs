@@ -19,6 +19,7 @@ namespace Battle {
 
 		public void Special(){  //uses a special attack
 			CloseItems();
+
 		}
 
 		public void Items(){  //opens the sub-menu
