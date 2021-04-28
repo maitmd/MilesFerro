@@ -8,8 +8,10 @@ namespace Battle {
 		public bool isOpen_ItemMenu = false;
 		public Animator ItemMenuAni;
 		ItemMenu itemMenu;
+		Transitions transition;
 
 		private void Start() {
+			transition = gameObject.AddComponent<Transitions>();
 			itemMenu = FindObjectOfType<ItemMenu>();
 		}
 
@@ -45,6 +47,7 @@ namespace Battle {
 
 		public void Run(){  //Exits the battle
 			CloseItems();
+			transition.BattleEnd(3);
 		}
 	}
 }

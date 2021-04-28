@@ -10,10 +10,10 @@ public class Rock : Item
     private int id = 4;
 
 
-    public override void Using(LivingEntity self, LivingEntity targ)
+    public override void Using(LivingEntity self)
     {
         float plusOrMinus = Random.Range(0f, 20f);
-        targ.CurrentHealth -= (30 + plusOrMinus) * self.AttackBonus;
+        /*targ.CurrentHealth -= (30 + plusOrMinus) * self.AttackBonus;*/
         self.AttackBonus = 1;
     }
 }

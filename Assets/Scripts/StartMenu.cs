@@ -18,12 +18,12 @@ public class StartMenu : MonoBehaviour {
 	}
 
 	public void SettingsButton() {
-		gameObject.AddComponent<Camera>();
+		//gameObject.AddComponent<Camera>();
 		transitions.NonGameScene("SettingScene", SceneManager.GetActiveScene().name, false);
 	}
 
 	public void QuitButton() {
-		print("Quit");
-		//Application.Quit();
+		//print("Quit");
+		Application.Quit();
 	}
 }

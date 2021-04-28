@@ -42,9 +42,9 @@ public abstract class Item : MonoBehaviour
 
     public static Item[] fillItems()
     {
-        Item[] items = { new LesserHealing(), new GreaterHealing()};
+        Item[] items = { new LesserHealing(), new GreaterHealing(), new LesserAttack(), new GreaterAttack(), new Rock()};
         return items;
     }
 
-    abstract public void Using(LivingEntity self, LivingEntity targself);
+    abstract public void Using(LivingEntity self);
 }

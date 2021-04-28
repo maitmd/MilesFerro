@@ -25,6 +25,8 @@ public class TutorialBear : Enemy
 
     public override void battleActions(LivingEntity targ)
     {
-        
+        float plusOrMinus = Random.Range(0f, 10f);
+        targ.CurrentHealth -= (15 + plusOrMinus) * AttackBonus;
+        AttackBonus = 1;
     }
 }

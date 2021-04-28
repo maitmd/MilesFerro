@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: d8039f2d91d0a054abacb31e75e87490
+  - enabled: 1
+    path: Assets/Scenes/BattleBear.unity
+    guid: bc6a914699149a9479145b06d82161c1
   m_configObjects: {}

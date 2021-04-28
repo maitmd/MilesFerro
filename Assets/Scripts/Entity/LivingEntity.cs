@@ -38,9 +38,9 @@ public abstract class LivingEntity : Entity
     public Item[] Inventory
     {
         get { 
-                if(inventory[0] = null){
+                //if(inventory[0] = null){
                     inventory = Item.fillItems();
-                }
+                //}
                 return inventory; 
              }
         set { inventory = Item.fillItems(); }
