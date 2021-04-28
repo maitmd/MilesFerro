@@ -2000,9 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen_ItemMenu: 0
-  panelSize: 0
   ItemMenuAni: {fileID: 1116070357}
-  PanelSize: {fileID: 245494780}
 --- !u!1 &731091284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,10 +2417,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1602374355}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: specialAttack
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1602374356}
+          m_ObjectArgumentAssemblyTypeName: Enemy, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3087,10 +3085,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1602374355}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: standardAttack
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1602374356}
+          m_ObjectArgumentAssemblyTypeName: Enemy, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Entity
@@ -3276,11 +3274,9 @@ MonoBehaviour:
   isOpen_HealingMenu: 0
   isOpen_SpecialMenu: 0
   isOpen_AttackMenu: 0
-  panelSize: 0
   HealingMenuAni: {fileID: 113217490}
   SpecialMenuAni: {fileID: 1690783414}
   AttackMenuAni: {fileID: 408577820}
-  PanelSize: {fileID: 245494780}
 --- !u!95 &1116070357
 Animator:
   serializedVersion: 3
@@ -5468,6 +5464,7 @@ GameObject:
   - component: {fileID: 1602374354}
   - component: {fileID: 1602374355}
   - component: {fileID: 1602374353}
+  - component: {fileID: 1602374356}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5490,7 +5487,7 @@ MonoBehaviour:
   enemyBattlers:
   - {fileID: 0}
   allyBattlers:
-  - {fileID: 0}
+  - {fileID: 6802155491526677612, guid: eb352b646670f80489d1c3075569ea34, type: 3}
   playerHealthBar: {fileID: 1096012385}
   enemyHealthBar: {fileID: 1592064046}
   playerPanel: {fileID: 245494776}
@@ -5520,6 +5517,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5921c1d6fd7ce84aa75ce33120485d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+--- !u!114 &1602374356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602374352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddc1167ae623d2478161f50ab3152df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
@@ -5873,9 +5884,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602374355}
+      - m_Target: {fileID: 1602374352}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: useItem
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6541,9 +6552,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602374355}
+      - m_Target: {fileID: 1602374352}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: useItem
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
