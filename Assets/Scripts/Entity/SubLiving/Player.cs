@@ -12,13 +12,13 @@ public class Player : LivingEntity
     public void standardAttack()
     {
 
-        attackBonus = 1;
+        AttackBonus = 1;
     }
 
     public void specialAttack()
     {
 
-        attackBonus = 1;
+        AttackBonus = 1;
     }
 
     public void useItem(int itemID)
