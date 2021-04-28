@@ -23,10 +23,10 @@ public class Player : LivingEntity
         AttackBonus = 1;
     }
 
-    public void useItem(int itemID, Enemy targ)
+    public void useItem(int itemID)
     {
         Item it = this.Inventory[itemID];
-        it.Using(this, targ);
+        it.Using(this);
     }
 
 

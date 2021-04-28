@@ -10,7 +10,7 @@ public class LesserAttack : Item
     private int id = 2;
 
 
-    public override void Using(LivingEntity self, LivingEntity targ)
+    public override void Using(LivingEntity self)
     {
         self.AttackBonus = attackBonus;
     }

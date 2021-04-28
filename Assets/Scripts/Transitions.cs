@@ -21,12 +21,15 @@ public class Transitions : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision){
 		if (gameObject.CompareTag("Enemy")){
-			Time.timeScale = 0f;//stops previous scene while BattleScene is active
-			StartCoroutine(AsyncLoad(false,newScene));
+			//Time.timeScale = 0f;//stops previous scene while BattleScene is active
+			TransitionStack.PushScene(SceneManager.GetActiveScene().name);
+			
+			StartCoroutine(AsyncLoad(true,newScene));
+			StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(newScene)));
 			//SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
-			TransitionStack.PushScene(newScene);
+			TransitionStack.PushScene(SceneManager.GetActiveScene().name);
 
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene)); //if this doesn't work properly
+			//SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene)); //if this doesn't work properly
 			//tell me so I can switch method to Async coroutines
 		}
 	}
@@ -47,6 +50,7 @@ public class Transitions : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.E)) {
 				//prevScene = currentScene;
 				StartCoroutine(AsyncLoad(false, newScene));
+				StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(newScene)));
 				//SceneManager.LoadScene(newScene, LoadSceneMode.Additive);
 				//SceneManager.LoadScene(newScene);
 				TransitionStack.PushScene(currentScene);
@@ -56,33 +60,33 @@ public class Transitions : MonoBehaviour
 		}
 	}
 
-	public void BattleEnd(){  //call proper scene from here
-		if (newScene.Equals("Win")){
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(TransitionStack.PeekScene()));
+	public void BattleEnd(int winner){  //call proper scene from here
+		Time.timeScale = 1f;
+		if (winner == 1){ //player wins
+			print("You Win");
+			StartCoroutine(AsyncLoad(true, TransitionStack.PeekScene()));
+			StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(TransitionStack.PeekScene())));
 
-			Time.timeScale = 1f;//unpauses previous scene
-			SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Battle"));//after destroying BattleScene
 			TransitionStack.PopScene();
 			//We need to remove the object from Scene
-		}
-		if (newScene.Equals("Lose")){//change this when we have have a lose scene
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(TransitionStack.PeekScene()));
-			Time.timeScale = 1f;//unpauses previous scene
+		}else if (winner == 2){//change this when we have have a lose scene
+			print("You Lose");
+			StartCoroutine(AsyncLoad(true, TransitionStack.PeekScene()));
+			StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(TransitionStack.PeekScene())));
 
-			SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Battle"));//after destroying BattleScene
 			TransitionStack.PopScene();
 		}
-		if (newScene.Equals("Escape")){
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(TransitionStack.PeekScene()));
-			Time.timeScale = 1f;//unpauses previous scene
-			SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Battle"));//after destroying BattleScene
+		if(winner == 3) {
+			print("No On Escapes From The Bear");
+			StartCoroutine(AsyncLoad(true, TransitionStack.PeekScene()));
+			StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(TransitionStack.PeekScene())));
+
 			TransitionStack.PopScene();
 		}
 		//Add other Scenes as necessary
 	}
 
 	public void NonGameScene(string newScene, string currentScene, bool single){
-		Time.timeScale = 0f;
 		if(!single) { //Loading Additively
 			print(SceneManager.GetActiveScene().name + " Before Coroutine");
 			StartCoroutine(AsyncLoad(single, newScene));
@@ -90,6 +94,7 @@ public class Transitions : MonoBehaviour
 			TransitionStack.PushScene(currentScene);
 		} else { //Loading Single
 			StartCoroutine(AsyncLoad(single, newScene));
+			StartCoroutine(WaitForSceneLoad(SceneManager.GetSceneByName(newScene)));
 			TransitionStack.PushScene(currentScene);
 		}
 	}

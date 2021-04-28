@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
 	}
 
 	public void QuitButton() {
-        print("quitting");
-        //Application.Quit();
+        //print("quitting");
+        Application.Quit();
 	}
 }

@@ -8,7 +8,7 @@ public class LesserHealing : Item{
     private int id = 0;
 
 
-	public override void Using(LivingEntity self, LivingEntity targ)
+	public override void Using(LivingEntity self)
     {
         self.CurrentHealth += ((int)(self.MaxHealth * healAmount));
     }
