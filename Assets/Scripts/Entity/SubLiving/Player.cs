@@ -5,35 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class Player : LivingEntity
 { 
-
-    // Start is called before the first frame update
-    public void Awake()
+    public override void battleActions(LivingEntity targ)
     {
-
-    }
-
-    public void Start()
-    {
-    }
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public override void battleActions()
-    {
-        
     }
 
     public void standardAttack()
     {
 
+        attackBonus = 1;
+    }
+
+    public void specialAttack()
+    {
+
+        attackBonus = 1;
     }
 
     public void useItem(int itemID)
     {
-        Item it = getInventory()[itemID];
+        Item it = this.Inventory[itemID];
         it.Using(this);
-        Debug.Log("it works - player");
     }
 }

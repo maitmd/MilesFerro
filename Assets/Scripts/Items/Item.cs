@@ -5,44 +5,34 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     private const int MAXITEMS = 1;
-    private string itemName;
-    private int amount;
-    private int id;
+    private string itemName
+    {
+        get { return itemName; }
+        set { itemName = value; }
+    }
+
+    private int amount
+    {
+        get { return amount; }
+        set { amount = value; }
+    }
+
+    private int id
+    {
+        get { return id; }
+        set { id = value; }
+    }
 
     public int SubtractItem()
     {
         amount--;
-        return getAmount();
+        return this.amount;
     }
 
     public int AddItem()
     {
         amount++;
-        return getAmount();
-    }
-
-    public void setItemName(string itN)
-    {
-        itemName = itN;
-    }
-
-    public void setAmount(int i)
-    {
-        amount = i;
-    }
-    public int getAmount()
-    {
-        return amount;
-    }
-
-    public void setID(int i)
-    {
-        id = i;
-    }
-    
-    public int getID()
-    {
-        return id;
+        return this.amount;
     }
 
     public static int getMaxItems()
@@ -52,7 +42,7 @@ public abstract class Item : MonoBehaviour
 
     public static Item[] fillItems()
     {
-        Item[] items = { new LesserHealing() };
+        Item[] items = { new LesserHealing(), new GreaterHealing()};
         return items;
     }
 

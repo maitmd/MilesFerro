@@ -8,9 +8,10 @@ public class TutorialBear : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        setReturnScene("LivingRoom");
-        setBattlePrefab("TutorialBear");
-        setNumBattlers(1f);
+        this.ReturnScene = "LivingRoom";
+        this.BattlePrefab = "TutorialBear";
+        this.NumBattlers = 1f;
+        this.Name = "TutorialBear";
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class TutorialBear : Enemy
         }
     }
 
-    new public void battleActions()
+    public override void battleActions(LivingEntity targ)
     {
         
     }

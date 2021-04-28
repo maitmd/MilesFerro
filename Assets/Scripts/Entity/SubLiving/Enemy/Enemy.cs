@@ -6,45 +6,31 @@ using UnityEngine.SceneManagement;
 public class Enemy : LivingEntity
 {
     private string battlePrefab;
+    public string BattlePrefab
+    {
+        get { return battlePrefab; }
+        set { battlePrefab = value; }
+    }
+
     private string returnScene;
+    public string ReturnScene
+    {
+        get { return returnScene; }
+        set { returnScene = value; }
+    }
+
     private float numBattlers;
-    // Start is called before the first frame update
-    void Start()
+    public float NumBattlers
     {
-
+        get { return numBattlers; }
+        set { numBattlers = value; }
     }
 
-    // Update is called once per frame
-    void Update()
+    private string name;
+    public string Name
     {
-
+        get { return name; }
+        set { name = value; }
     }
-
-    public string getBattlePrefab()
-    {
-        return battlePrefab;
-    }
-
-    public string getReturnScene()
-    {
-        return returnScene;
-    }
-    public float getNumBattlers()
-    {
-        return numBattlers;
-    }
-	public void setBattlePrefab(string b) {
-        battlePrefab = b;
-	}
-
-    public void setReturnScene(string r)
-    {
-        returnScene = r;
-    }
-    public void setNumBattlers(float n)
-    {
-        numBattlers = n;
-    }
-
-    public override void battleActions() { }
+    public override void battleActions(LivingEntity targ) { }
 }

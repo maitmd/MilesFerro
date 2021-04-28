@@ -4,63 +4,51 @@ using UnityEngine;
 
 public abstract class LivingEntity : Entity
 {
-
-    [SerializeField] private int maxHealth;
-    [SerializeField] private float speed;
-    private int currentHealth;
-    private Item[] inventory = Item.fillItems();
     private bool battling = false;
 
-    public void setHealth(int newHealth)
+    [SerializeField] private float maxHealth;
+    public float MaxHealth
     {
-        currentHealth = newHealth;
+        get { return maxHealth; }
+        set { maxHealth = value; }
     }
 
-    public void setMaxHealth(int max)
+    private float attackBonus = 1;
+    public float AttackBonus
     {
-        maxHealth = max;
+        get { return attackBonus; }
+        set { attackBonus = value; }
     }
 
-    public void setSpeed(float sp)
+    private float attackValue = 10f;
+    public float AttackValue
     {
-        speed = sp;
+        get { return attackValue; }
+        set { attackValue = value; }
     }
 
-    public void addItem(Item it)
+    [SerializeField] private float currentHealth;
+    public float CurrentHealth
     {
-        inventory[it.getID()].AddItem();
+        get { return currentHealth; }
+        set { currentHealth = value; }
     }
 
-    public void removeItem(Item it)
+    private Item[] inventory;
+    public Item[] Inventory
     {
-        Item temp = inventory[it.getID()];
-        if (temp.getAmount() <= 0)
-        {
-            temp.setAmount(0);
-        } else
-        {
-            temp.SubtractItem();
-        }
+        get { 
+                if(inventory[0] = null){
+                    inventory = Item.fillItems();
+                }
+                return inventory; 
+             }
+        set { inventory = Item.fillItems(); }
     }
 
-    public int getMaxHealth()
+    public void battleStartEnd()
     {
-        return maxHealth;
-    }
-
-    public int getHealth()
-    {
-        return currentHealth;
-    }
-
-    public float getSpeed()
-    {
-        return speed;
-    }
-
-    public Item[] getInventory()
-    {
-        return inventory;
+        battling = !battling;
     }
 
     public bool isBattling()
@@ -68,9 +56,5 @@ public abstract class LivingEntity : Entity
         return battling;
     }
 
-    public void battleStartEnd()
-    {
-        battling = !battling;
-    }
-    public abstract void battleActions();
+    public abstract void battleActions(LivingEntity targ);
 }
